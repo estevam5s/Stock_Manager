@@ -6,6 +6,7 @@ from TAB_resumos import TabResumos
 from TAB_estoque import TabEstoque
 from TAB_entradas import TabEntradas
 from TAB_saidas import TabSaidas
+from TAB_ia import TabIA
 from con_database import *
 
 
@@ -50,6 +51,9 @@ class Application:
         
         self.tabs_view.add("Saídas")
         TabSaidas(self.tabs_view.tab("Saídas"))
+
+        self.tabs_view.add("Análise IA")
+        TabIA(self.tabs_view.tab("Análise IA"))
 
         self.tabs_view.set("Resumos",)
 
