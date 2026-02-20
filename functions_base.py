@@ -10,14 +10,14 @@ from random import randint
 class FunctionsExtras:
 
     def image_button(self, nameImage, scale=tuple):
-        img = ctk.CTkImage(light_image=Image.open("./Stock_Manager/image/" + nameImage),
-                           dark_image=Image.open("./Stock_Manager/image/" + nameImage),
+        img = ctk.CTkImage(light_image=Image.open("./image/" + nameImage),
+                           dark_image=Image.open("./image/" + nameImage),
                            size=(scale))
         return img
     
     def image_barcode(self, nameImage, scale=tuple):
-        img = ctk.CTkImage(light_image=Image.open("./Stock_Manager/barCodes/" + nameImage),
-                           dark_image=Image.open("./Stock_Manager/barCodes/" + nameImage),
+        img = ctk.CTkImage(light_image=Image.open("./barCodes/" + nameImage),
+                           dark_image=Image.open("./barCodes/" + nameImage),
                            size=(scale))
         return img
 
@@ -32,7 +32,7 @@ class FunctionsExtras:
                         numbers += str(randint(1, 9))
                     
                     code = EAN13(numbers, writer=ImageWriter())
-                    code.save(f"./Stock_Manager/barCodes/{id_product}")
+                    code.save(f"./barCodes/{id_product}")
                     
                     messagebox.showinfo("Success", message="Código de barras gerado com sucesso!")
                     
